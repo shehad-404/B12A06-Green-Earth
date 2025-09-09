@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Green Earth - Plant a Tree</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="topbar navbar navbar-expand-lg py-3">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#"><strong>Green Earth</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navmenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#plant">Plant a Tree</a></li>
+                </ul>
+            </div>
+            <div>
+                <button class="btn btn-warning">Plant a Tree</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner py-5">
+        <div class="overlay">
+            <h1 class="display-6">Plant a Tree, Grow a Future</h1>
+            <p>Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
+            <button class="btn btn-warning">Get Involved</button>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <main class="container my-5">
+        <h3 class="text-center mb-4">Choose Your Trees</h3>
+        <div class="row">
+            <aside class="col-lg-2 mb-4">
+                <div class="category-list">
+                    <div class="list-group" id="categories">
+                        <div class="list-group-item active" data-id="all">All Trees</div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="col-lg-7">
+                <div id="plantsArea" class="row g-4"></div>
+            </section>
+
+            <aside class="col-lg-3">
+                <div class="card p-3 cart-card">
+                    <h6>Your Cart</h6>
+                    <ul class="list-group mb-3" id="cartList"></ul>
+                    <div class="d-flex justify-content-between fw-bold">Total: <div id="totalPrice">$0</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- About Campaign -->
+        <section id="about" class="row align-items-center my-5">
+            <div class="col-md-5">
+                <img src="img/plant.png" class="img-fluid rounded shadow" alt="plant">
+            </div>
+            <div class="col-md-7">
+                <h4>About the Campaign</h4>
+                <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change. By joining
+                    our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
+                <ul>
+                    <li>Restoration of natural habitats</li>
+                    <li>Improvement of air quality</li>
+                    <li>Support for local communities</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Impact -->
+        <section class="my-5 py-4 impact-section">
+            <h4 class="text-center mb-4">Our Impact</h4>
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <div class="card p-3 impact-card">
+                        <h5>500K+</h5><small>Trees Planted</small>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card p-3 impact-card">
+                        <h5>120+</h5><small>Communities Involved</small>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card p-3 impact-card">
+                        <h5>30+</h5><small>Countries Reached</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plant a Tree Today Form -->
+        <section id="plant" class="my-5 text-center">
+            <h4>Plant a Tree Today</h4>
+            <div class="d-flex justify-content-center mt-3">
+                <form class="card p-4 plant-form">
+                    <div class="mb-2"><input id="donorName" class="form-control" placeholder="Your Name"></div>
+                    <div class="mb-2"><input id="donorEmail" class="form-control" placeholder="Your Email"></div>
+                    <div class="mb-2"><select id="donorCount" class="form-select">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>5</option>
+                        </select></div>
+                    <button type="button" class="btn btn-warning w-100">Donate Now</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">© 2025 Green Earth. All Rights Reserved.</div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="plantModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Plant Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5"><img id="modalImage" src="" class="img-fluid rounded"></div>
+                        <div class="col-md-7">
+                            <p id="modalDesc"></p>
+                            <p><strong>Category:</strong> <span id="modalCat"></span></p>
+                            <p><strong>Price:</strong> <span id="modalPrice"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading spinner -->
+    <div class="spinner-overlay" id="spinner">
+        <div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
