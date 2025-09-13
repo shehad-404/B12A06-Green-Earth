@@ -92,6 +92,51 @@
   }
   
   /* responsive override */
+  /* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+    .banner {
+      padding: 30px 10px;
+    }
+    
+    .banner-img {
+      max-width: 80px;
+    }
+  
+    .card-plant {
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+  
+    .card-plant img {
+      height: 130px;
+    }
+  
+    .btn-add {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  
+    .impact, .plant-free, #donateForm {
+      padding: 15px 8px;
+    }
+  
+    aside.col-lg-2, aside.col-lg-3, section.col-lg-7 {
+      padding: 0 5px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  
+    .badge-category {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+  
+    footer {
+      padding: 15px 5px;
+      font-size: 14px;
+    }
+  }
+  
   @media (max-width: 991px) {
     aside.col-lg-3, aside.col-lg-2 { order: 2; }
     section.col-lg-7 { order: 1; }
