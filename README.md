@@ -1,24 +1,47 @@
 # B12A06-Green-Earth
 
-# Green Earth 🌍
+---
 
-A web project built with **HTML, Bootstrap, and JavaScript** to showcase tree plantation campaigns and allow users to explore, select, and add plants to their cart.
+## 📘 Q&A
+
+### 1) What is the difference between var, let, and const?
+- **var**
+  - Function-scoped
+  - Can be redeclared and updated
+  - Hoisted (initialized as `undefined`)
+- **let**
+  - Block-scoped
+  - Can be updated but not redeclared in the same scope
+  - Hoisted but not initialized (Temporal Dead Zone)
+- **const**
+  - Block-scoped
+  - Cannot be reassigned or redeclared
+  - Must be initialized at declaration
 
 ---
 
-## Q&A
+### 2) What is the difference between map(), forEach(), and filter()?
+- **map()**
+  - Returns a **new array** with transformed elements
+  - Example: `arr.map(x => x * 2)`
+- **forEach()**
+  - Iterates over an array but **does not return** anything
+  - Example: `arr.forEach(x => console.log(x))`
+- **filter()**
+  - Returns a **new array** with elements that pass a condition
+  - Example: `arr.filter(x => x > 5)`
 
-### 1. Difference between var, let, and const
-- **var**: Function-scoped, allows re-declaration, hoisted with undefined.
-- **let**: Block-scoped, cannot be re-declared, hoisted but not initialized.
-- **const**: Block-scoped, cannot be re-declared or reassigned, hoisted but not initialized.
+---
 
-### 2. Difference between map(), forEach(), and filter()
-- **map()**: Returns a new array with transformed elements.
-- **forEach()**: Iterates over array elements but returns undefined.
-- **filter()**: Returns a new array with elements passing a condition.
+### 3) What are arrow functions in ES6?
+Arrow functions provide a shorter syntax for functions.  
+They do not have their own `this` and inherit from the parent scope.
 
-### 3. Arrow functions in ES6
-Shorter syntax for writing functions:  
 ```js
-const add = (a, b) => a + b;
+// Regular function
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow function
+const addArrow = (a, b) => a + b;
