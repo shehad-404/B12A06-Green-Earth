@@ -1,86 +1,113 @@
-:root {
-    --green: #1b6b31;
-    --soft: #eaf6ef;
-    --accent: #f2c419;
-}
-
-body {
-    background: var(--soft);
-    font-family: Inter, system-ui, Arial, sans-serif
-}
-
-.topbar {
-    background: var(--green);
-    color: #fff
-}
-
-.banner {
-    background: var(--soft) url('img/banner.jpg') no-repeat center/cover;
-    padding: 80px 0;
-    text-align: center
-}
-
-.banner .overlay {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 40px;
+/* Custom styles for Green Earth project */
+:root{
+    --brand-green: #0f7a3a;
+    --soft-green: #eaf7ef;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--soft-green);
+  }
+  
+  /* Banner */
+  .banner {
+    background-color: #CFF0DC; /* optional background */
+    position: relative;
+    overflow: hidden; /* hides if image overflows */
+  }
+  
+  .banner-img {
+    position: absolute;
+    bottom: 0;  /* stick to bottom */
+    max-width: 200px; /* adjust as needed */
+    height: auto;
+  }
+  
+  .banner-img.left {
+    left: 0;  /* align to left */
+  }
+  
+  .banner-img.right {
+    right: 0; /* align to right */
+  }
+  
+  
+  
+  /* Card layout */
+  .card-plant {
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(15,122,58,0.06);
+    padding: 12px;
+    background: white;
+  }
+  
+  .card-plant img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
     border-radius: 8px;
-    display: inline-block
-}
-
-.category-list .list-group-item.active {
-    background: var(--green);
-    border-color: var(--green);
-    color: #fff
-}
-
-.card .badge-cat {
-    background: #e6f7ea;
-    color: var(--green);
+    background: #efefef;
+  }
+  
+  /* Add to Cart button */
+  .btn-add {
+    background: var(--brand-green);
+    color: white;
+    border-radius: 999px;
+    padding: 10px 16px;
+  }
+  
+  /* category active */
+  .list-group .list-group-item.active-cat {
+    background: var(--brand-green);
+    color: white;
     font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 8px
-}
-
-.cart-card {
-    position: sticky;
-    top: 20px
-}
-
-.spinner-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1050;
-    display: none
-}
-
-.impact-card {
-    min-height: 90px
-}
-
-.impact-section {
-    background: #dff4e8;
-    border-radius: 8px
-}
-
-.plant-form {
-    width: 420px;
-    background: var(--green);
-    color: #fff
-}
-
-footer {
-    background: var(--green);
-    color: #fff;
-    padding: 24px 0
-}
-
-@media (max-width:991px) {
-    .cart-card {
-        position: static;
-        margin-top: 20px
-    }
-}
+  }
+  
+  /* cart list items */
+  #cartList li {
+    padding: 6px 0;
+    border-bottom: 1px dashed #eee;
+  }
+  
+  /* Impact part  */
+  .impact{
+    background: #CFF0DC;
+    color: black;
+  }
+  
+  /* Plant Free part  */
+  .plant-free{
+    background: #166534;
+    color: white;
+  }
+  
+  #donateForm{
+    background: #15803D;
+  }
+  
+  /* Footer part  */
+  footer{
+    background: #14532D;
+  }
+  
+  /* responsive override */
+  @media (max-width: 991px) {
+    aside.col-lg-3, aside.col-lg-2 { order: 2; }
+    section.col-lg-7 { order: 1; }
+  }
+  
+  /* small helpers */
+  .badge-category {
+    background: #e6fbef;
+    color: var(--brand-green);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-weight: 600;
+  }
+  
+  /* sticky cart on desktop */
+  @media (min-width: 992px) {
+    aside.col-lg-2 .card { position: sticky; top: 20px; }
+  }
+  
